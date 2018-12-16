@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_05_160137) do
+ActiveRecord::Schema.define(version: 2018_12_15_213518) do
+
+  create_table "clubs", force: :cascade do |t|
+    t.string "name"
+    t.integer "owner"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rules", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "points"
+    t.integer "club_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["club_id"], name: "index_rules_on_club_id"
+  end
 
   create_table "staffs", force: :cascade do |t|
     t.text "firstName"
