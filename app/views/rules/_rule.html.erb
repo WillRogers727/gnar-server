@@ -1,0 +1,7 @@
+<p>
+  <strong>Rule:</strong>
+  <%= rule.title %>
+  <%= rule.description %>
+  <%= rule.points %>
+  <%= link_to 'Remove', [rule.club, rule], :confirm => 'Really remove rule?', :method => :delete %>
+</p>
